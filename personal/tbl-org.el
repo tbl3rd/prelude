@@ -1,0 +1,56 @@
+(setq org-export-backends
+      '(ascii confluence html icalendar latex))
+
+(setq org-publish-project-alist
+      '(("html"
+         :components ("html-html"
+                      "html-other"))
+        ("html-html"
+         :recursive t
+         :base-directory "~/qrc/html/"
+         :base-extension "org"
+         :publishing-directory "/electron:/home/tbl/public_html"
+         :publishing-function org-publish-org-to-html)
+        ("html-other"
+         :recursive t
+         :base-directory "~/qrc/html/"
+         :base-extension "gif\\|jpg\\|org\\|png"
+         :publishing-directory "/electron:/home/tbl/public_html"
+         :publishing-function org-publish-attachment)))
+
+(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org-mode/lisp"))
+(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org-mode/contrib/lisp"))
+(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org-jira"))
+
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (fci-mode)
+            (setq org-confirm-babel-evaluate nil
+                  whitespace-line-column nil
+                  whitespace-style '(face tabs empty trailing))
+            (local-set-key (kbd "C-c l") 'org-store-link)))
+
+(setq org-list-empty-line-terminates-plain-lists t)
+
+(setq jiralib-url "https://jira-hzn.eng.vmware.com")
+
+(prelude-require-package 'org)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((clojure . t)
+   (ditaa . t)
+   (dot . t)
+   (emacs-lisp . t)
+   (gnuplot . t)
+   (latex . t)
+   (org . t)
+   (sh . t)))
+
+(add-to-list
+ 'org-src-lang-modes
+ '("dot" . graphviz-dot))
+
+(provide 'tbl-org)
