@@ -26,7 +26,6 @@
 
 (add-hook 'org-mode-hook
           (lambda ()
-            (fci-mode)
             (setq org-confirm-babel-evaluate nil
                   whitespace-line-column nil
                   whitespace-style '(face tabs empty trailing))
