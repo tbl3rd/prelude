@@ -18,9 +18,9 @@
          :publishing-directory "/electron:/home/tbl/public_html"
          :publishing-function org-publish-attachment)))
 
-(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org-mode/lisp"))
-(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org-mode/contrib/lisp"))
-(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org-jira"))
+(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org/lisp"))
+(add-to-list 'load-path (expand-file-name "~/Src/Elisp/org/contrib/lisp"))
+;; (add-to-list 'load-path (expand-file-name "~/Src/Elisp/org-jira"))
 
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
@@ -51,5 +51,8 @@
 (add-to-list
  'org-src-lang-modes
  '("dot" . graphviz-dot))
+
+(require 'ox-confluence)
+;; (require 'ox-confluence-en)
 
 (provide 'tbl-org)
