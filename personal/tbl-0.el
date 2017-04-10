@@ -3,7 +3,7 @@
 (prefer-coding-system 'utf-8)
 (put 'narrow-to-region 'disabled nil)
 
-(defvar tbl3rd-font "Monaco 18")
+(defvar tbl3rd-font "Monaco 16")
 (defvar tbl3rd-frame-height 40)
 
 (when (equal "lyonst" (getenv "USER"))
@@ -134,4 +134,7 @@
 
 ;; (pdf-tools-install)
 
-(provide 'tbl-0)
+;; (set-keyboard-coding-system nil)
+;; (setq mac-command-modifier 'meta)
+
+(provide 'tbl-0) 

@@ -1,6 +1,14 @@
 (add-hook
  'java-mode-hook
  (lambda ()
+    (let ((map (make-sparse-keymap)))
+      (define-key map [(control ?\,)]    'jtags-member-completion)
+      (define-key map [(meta ?\j)]       'jtags-show-declaration)
+      (define-key map [(meta ?\.)]       'xref-find-definitions)
+      (define-key map [(meta ?\,)]       'xref-pop-marker-stack)
+      (define-key map [(meta f1)]        'jtags-show-documentation)
+      (define-key map [(control c) ?\,] 'jtags-update-this-tags-file)
+      (setq jtags-mode-map map))
    (jtags-mode)))
 
 (add-hook

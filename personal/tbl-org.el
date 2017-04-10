@@ -33,7 +33,9 @@
 
 (setq org-list-empty-line-terminates-plain-lists t)
 
-(setq jiralib-url "https://jira-hzn.eng.vmware.com")
+;; (setq jiralib-url "https://jira-hzn.eng.vmware.com")
+;; (setq request-log-level 'debug)
+;; (setq request-message-level 'debug)
 
 (prelude-require-package 'org)
 
@@ -52,7 +54,7 @@
  'org-src-lang-modes
  '("dot" . graphviz-dot))
 
-(require 'ox-confluence)
+;; (require 'ox-confluence)
 ;; (require 'ox-confluence-en)
 
 (provide 'tbl-org)
