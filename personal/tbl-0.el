@@ -6,8 +6,8 @@
 (defvar tbl3rd-font "Monaco 16")
 (defvar tbl3rd-frame-height 40)
 
-(when (equal "lyonst" (getenv "USER"))
-   (setq tbl3rd-font "Monaco 14")
+(when (equal "tbl" (getenv "USER"))
+   (setq tbl3rd-font "Monaco 16")
    (setq tbl3rd-frame-height 44))
 
 ;; For presentations.
