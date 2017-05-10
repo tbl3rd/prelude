@@ -15,10 +15,10 @@
     (comment-column . 40)
     (fill-column . 75))
   "Dan Nussbaum likes this.")
-;; (c-add-style "qrc-c" qrc-c-style)
-;; (customize-set-variable 'c-default-style
-;;                         (add-to-list 'c-default-style
-;;                                      '(c++-mode . "qrc-c")))
+(c-add-style "qrc-c" qrc-c-style)
+(customize-set-variable 'c-default-style
+                        (add-to-list 'c-default-style
+                                     '(c++-mode . "qrc-c")))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
