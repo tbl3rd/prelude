@@ -71,8 +71,8 @@
      (inher-cont . c-lineup-multi-inher)
      (string . -1000)
      (comment-intro . c-lineup-comment)
-     (arglist-cont-nonempty . +)
-     (arglist-close . c-lineup-close-paren)
+     (arglist-cont-nonempty . ++)       ; was +
+     (arglist-close . 0) ; was c-lineup-close-paren
      (cpp-macro . -1000)))
   "Broad Institute")
 

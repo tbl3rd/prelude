@@ -1,6 +1,9 @@
+(require 'aggressive-indent)
+
 (defun tbl-clojure-hook ()
   "Run this in any Clojure buffer."
-  (smartparens-strict-mode t))
+  (smartparens-strict-mode t)
+  (aggressive-indent-mode))
 
 (defun tbl-cider-hook ()
   "Run this in any Clojure buffer when CIDER is active."
