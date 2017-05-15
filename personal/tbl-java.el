@@ -1,4 +1,3 @@
-
 (defconst broad-java-style
   '((c-basic-offset . 4)
     (c-offsets-alist
@@ -111,7 +110,15 @@
     jdee-maven-project-dir "")))
 
 (require 'ensime)
-;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+(setq ensime-startup-dirname "/Users/tbl/.emacs.d/elpa/ensime-1.0.1")
+
+(setq ensime-default-java-flags
+      (mapconcat 'identity '("-Xss2m"
+                             "-Xms2048m"
+                             "-Xmx2048m"
+                             "-XX:ReservedCodeCacheSize=128m"
+                             "-XX:MaxMetaspaceSize=256m") " "))
 
 ;; (add-to-list 'auto-mode-alist '("\\.wdl\\'" . scala-mode))
 
