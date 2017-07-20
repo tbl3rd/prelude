@@ -7,6 +7,7 @@
 
 (defun tbl-cider-hook ()
   "Run this in any Clojure buffer when CIDER is active."
+  (setq cider-pprint-fn 'fipp)          ; faster pretty-printer
   (company-mode)
   (eldoc-mode)
   (smartparens-strict-mode t))

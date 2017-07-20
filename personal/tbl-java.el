@@ -109,16 +109,16 @@
     '("/Users/lyonst/Vmware/Git/cloud/sp-main/dev-integration/system-tests/SystemTests/target")
     jdee-maven-project-dir "")))
 
-(require 'ensime)
+;; (require 'ensime)
 
-(setq ensime-startup-dirname "/Users/tbl/.emacs.d/elpa/ensime-1.0.1")
+;; (setq ensime-startup-dirname "/Users/tbl/.emacs.d/elpa/ensime-1.0.1")
 
-(setq ensime-default-java-flags
-      (mapconcat 'identity '("-Xss2m"
-                             "-Xms2048m"
-                             "-Xmx2048m"
-                             "-XX:ReservedCodeCacheSize=128m"
-                             "-XX:MaxMetaspaceSize=256m") " "))
+;; (setq ensime-default-java-flags
+;;       (mapconcat 'identity '("-Xss2m"
+;;                              "-Xms2048m"
+;;                              "-Xmx2048m"
+;;                              "-XX:ReservedCodeCacheSize=128m"
+;;                              "-XX:MaxMetaspaceSize=256m") " "))
 
 ;; (add-to-list 'auto-mode-alist '("\\.wdl\\'" . scala-mode))
 
