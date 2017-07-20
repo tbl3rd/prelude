@@ -3,6 +3,7 @@
 (defun tbl-clojure-hook ()
   "Run this in any Clojure buffer."
   (smartparens-strict-mode t)
+  (local-set-key (kbd "M-j") 'sp-join-sexp)
   (aggressive-indent-mode))
 
 (defun tbl-cider-hook ()
