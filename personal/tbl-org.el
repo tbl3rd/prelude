@@ -1,3 +1,5 @@
+(require 'org-bullets)
+
 (setq org-export-backends
       '(ascii confluence html icalendar latex))
 
@@ -24,9 +26,14 @@
 
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
+;; Work around org-mode babel trying to write remote temp files into a
+;; MacOS temp directory.
+;;
 (add-hook 'org-mode-hook
           (lambda ()
+            (org-bullets-mode 1)
             (setq org-confirm-babel-evaluate nil
+                  temporary-file-directory "/tmp" ;; help tramp
                   whitespace-line-column nil
                   whitespace-style '(face tabs empty trailing))
             (local-set-key (kbd "C-c l") 'org-store-link)))
