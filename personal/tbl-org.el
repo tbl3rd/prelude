@@ -32,13 +32,21 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (org-bullets-mode 1)
+            (column-number-mode -1)
+            (line-number-mode -1)
             (setq org-confirm-babel-evaluate nil
                   temporary-file-directory "/tmp" ;; help tramp
                   whitespace-line-column nil
                   whitespace-style '(face tabs empty trailing))
             (local-set-key (kbd "C-c l") 'org-store-link)))
 
-(setq org-list-empty-line-terminates-plain-lists t)
+(setq org-babel-clojure-backend 'cider
+      org-confirm-babel-evaluate nil
+      org-edit-src-content-indentation 0
+      org-list-empty-line-terminates-plain-lists t
+      org-src-fontify-natively t
+      org-src-tab-acts-natively t
+      org-support-shift-select 'always)
 
 ;; (setq jiralib-url "https://jira-hzn.eng.vmware.com")
 ;; (setq request-log-level 'debug)
