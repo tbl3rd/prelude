@@ -22,6 +22,8 @@
 (add-to-list 'default-frame-alist (cons 'height tbl3rd-frame-height))
 (add-to-list 'default-frame-alist (cons 'width 81))
 
+(if (boundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
