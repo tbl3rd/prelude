@@ -14,6 +14,7 @@
 ;;
 ;; (setq prelude-theme nil)
 ;; (setq tbl3rd-font "Monaco 28")
+;; (setq tbl3rd-font "Monaco 32")
 ;; (global-linum-mode)
 
 (set-frame-font tbl3rd-font nil t)
@@ -39,8 +40,10 @@
 
 (tbl3rd-minor-mode 1)
 
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
+;; (projectile-global-mode)
+;; (setq projectile-completion-system 'helm)
+;; (setq projectile-file-exists-remote-cache-expire nil)
+(projectile-mode -1)
 
 (add-hook 'Info-mode-hook
           (lambda ()
