@@ -23,7 +23,6 @@
 (add-to-list 'default-frame-alist (cons 'width 81))
 
 (menu-bar-mode -1)
-(scroll-bar-mode -1)
 (tool-bar-mode -1)
 
 (setq ns-command-modifier 'meta)
