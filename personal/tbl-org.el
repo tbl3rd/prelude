@@ -1,4 +1,4 @@
-(require 'org-bullets)
+;; (require 'org-bullets)
 
 (setq org-export-backends
       '(ascii confluence html icalendar latex))
@@ -31,9 +31,9 @@
 ;;
 (add-hook 'org-mode-hook
           (lambda ()
-            (org-bullets-mode 1)
+            ;; (org-bullets-mode 1)
             (column-number-mode -1)
-            (line-number-mode -1)
+            ;; (line-number-mode -1)
             (setq org-confirm-babel-evaluate nil
                   temporary-file-directory "/tmp" ;; help tramp
                   whitespace-line-column nil
@@ -63,7 +63,8 @@
    (gnuplot . t)
    (latex . t)
    (org . t)
-   (sh . t)))
+   (sh . t)
+   (sql . t)))
 
 (add-to-list
  'org-src-lang-modes

@@ -12,3 +12,7 @@
       '(("MELPA Stable" . 10)
         ("GNU ELPA"     . 5)
         ("MELPA"        . 0)))
+
+;; Hack for R support.
+;;
+(add-to-list 'load-path "/Users/tbl/.emacs.d/elpa/ess-17.11")
