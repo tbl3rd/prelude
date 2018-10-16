@@ -10,6 +10,8 @@
   "Run this in any Clojure buffer when CIDER is active."
   (setq cider-pprint-fn 'fipp)          ; faster pretty-printer
   (company-mode)
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (eldoc-mode 1)
   (smartparens-strict-mode t))
 

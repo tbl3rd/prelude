@@ -52,9 +52,9 @@
 ;; (setq request-log-level 'debug)
 ;; (setq request-message-level 'debug)
 
-(prelude-require-package 'org)
+'(prelude-require-package 'org)
 
-(org-babel-do-load-languages
+'(org-babel-do-load-languages
  'org-babel-load-languages
  '((clojure . t)
    (ditaa . t)
@@ -66,11 +66,17 @@
    (sh . t)
    (sql . t)))
 
-(add-to-list
+'(add-to-list
  'org-src-lang-modes
  '("dot" . graphviz-dot))
 
 ;; (require 'ox-confluence)
 ;; (require 'ox-confluence-en)
+
+(setq epresent-mode-line nil)
+
+'(add-hook 'epresent-mode-hook
+          (lambda ()
+            (setq epresent-mode-line nil)))
 
 (provide 'tbl-org)

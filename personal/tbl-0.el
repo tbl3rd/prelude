@@ -44,7 +44,7 @@
 ;; (projectile-global-mode)
 ;; (setq projectile-completion-system 'helm)
 ;; (setq projectile-file-exists-remote-cache-expire nil)
-(projectile-mode -1)
+;; (projectile-mode -1)
 
 (add-hook 'Info-mode-hook
           (lambda ()
@@ -176,5 +176,9 @@
       (unless (ignore-errors                   ;some packages may fail to install
                 (package-reinstall package-name))
         (warn "Package %s failed to reinstall" package-name)))))
+
+;; From Phil.
+;;
+(setq save-interprogram-paste-before-kill t)
 
 (provide 'tbl-0)

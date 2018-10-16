@@ -1,6 +1,6 @@
 ;; Evaluate the following forms when demoing in Emacs.
 
-' (setq prelude-theme nil)
+'(setq prelude-theme nil)
 
 (setq prelude-flyspell nil)
 
