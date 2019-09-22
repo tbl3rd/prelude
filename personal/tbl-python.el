@@ -5,4 +5,6 @@
             (column-number-mode -1)
             (line-number-mode -1)))
 
+(elpy-enable)
+
 (provide 'tbl-python)

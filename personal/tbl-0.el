@@ -1,5 +1,12 @@
 ;; Customize miscellaneous personal stuff.
 
+;; (set-default 'truncate-lines t)
+;; (global-font-lock-mode 0)
+;; (add-to-list 'warning-suppress-types '(undo discard-info))
+
+;; (custom-set-variables
+;;  '(warning-suppress-types (quote ((undo discard-info)))))
+
 (prefer-coding-system 'utf-8)
 (put 'narrow-to-region 'disabled nil)
 
@@ -13,6 +20,7 @@
 ;; For presentations.
 ;;
 ;; (setq prelude-theme nil)
+;; (setq tbl3rd-font "Monaco 20")
 ;; (setq tbl3rd-font "Monaco 28")
 ;; (setq tbl3rd-font "Monaco 32")
 ;; (global-linum-mode)
@@ -153,8 +161,8 @@
         (replace-regexp "\\([A-Z]\\)" "_\\1" nil (1+ start) end)
         (downcase-region start (cdr (bounds-of-thing-at-point 'symbol)))))))
 
-(require 'string-inflection)
-(global-set-key (kbd "C-c C-u") 'string-inflection-all-cycle)
+;; (require 'string-inflection)
+;; (global-set-key (kbd "C-c C-u") 'string-inflection-all-cycle)
 
 ;; (pdf-tools-install)
 
@@ -180,5 +188,9 @@
 ;; From Phil.
 ;;
 (setq save-interprogram-paste-before-kill t)
+
+(add-hook 'origami-mode-hook
+          (lambda ()
+            (local-set-key (kbd "<S-tab>") 'origami-toggle-node)))
 
 (provide 'tbl-0)
