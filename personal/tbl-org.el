@@ -55,20 +55,20 @@
 '(prelude-require-package 'org)
 
 '(org-babel-do-load-languages
- 'org-babel-load-languages
- '((clojure . t)
-   (ditaa . t)
-   (dot . t)
-   (emacs-lisp . t)
-   (gnuplot . t)
-   (latex . t)
-   (org . t)
-   (sh . t)
-   (sql . t)))
+  'org-babel-load-languages
+  '((clojure . t)
+    (ditaa . t)
+    (dot . t)
+    (emacs-lisp . t)
+    (gnuplot . t)
+    (latex . t)
+    (org . t)
+    (sh . t)
+    (sql . t)))
 
 '(add-to-list
- 'org-src-lang-modes
- '("dot" . graphviz-dot))
+  'org-src-lang-modes
+  '("dot" . graphviz-dot))
 
 ;; (require 'ox-confluence)
 ;; (require 'ox-confluence-en)
@@ -76,7 +76,9 @@
 (setq epresent-mode-line nil)
 
 '(add-hook 'epresent-mode-hook
-          (lambda ()
-            (setq epresent-mode-line nil)))
+           (lambda ()
+             (setq epresent-mode-line nil)))
+
+(add-hook 'sql-mode-hook 'sqlind-minor-mode)
 
 (provide 'tbl-org)
