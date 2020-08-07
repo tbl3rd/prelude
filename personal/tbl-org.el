@@ -38,7 +38,16 @@
                   temporary-file-directory "/tmp" ;; help tramp
                   whitespace-line-column nil
                   whitespace-style '(face tabs empty trailing))
-            (local-set-key (kbd "C-c l") 'org-store-link)))
+            (local-set-key (kbd "C-c l") 'org-store-link)
+            (add-to-list 'org-file-apps
+                         '("\\.gif\\'" .
+                           (lambda (file link)
+                             (let ((my-image (create-image file))
+                                   (tmpbuf (get-buffer-create "*gif")))
+                               (switch-to-buffer tmpbuf)
+                               (erase-buffer)
+                               (insert-image my-image)
+                               (image-animate my-image nil t)))))))
 
 (setq org-babel-clojure-backend 'cider
       org-confirm-babel-evaluate nil
