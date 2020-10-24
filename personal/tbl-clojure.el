@@ -3,7 +3,10 @@
 
 (defun tbl-clojure-hook ()
   "Run this in any Clojure buffer."
+  ;; (setq clojure-indent-style 'align-arguments)
   (setq clojure-indent-style 'always-indent)
+  (put-clojure-indent '-> 1)
+  (put-clojure-indent '->> 1)
   (smartparens-strict-mode t)
   (local-set-key (kbd "M-j") 'sp-join-sexp)
   (aggressive-indent-mode 1)
